@@ -8,6 +8,9 @@ EINER JULIAN AGUDELO ACOSTA 105352
 HASBLEIDY JOHANNA SILVA ESCARRAGA 110002
 
 ## Documentación
+Diagrama de clases
+
+![alt text](DiagramaClases.png)
 
 Datos del codigo Inicial
 
