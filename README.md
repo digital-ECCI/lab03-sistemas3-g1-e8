@@ -13,7 +13,7 @@ Datos del codigo Inicial
 
 ![alt text](<WhatsApp Image 2026-03-21 at 4.20.20 PM.jpeg>)
 
-Datos del Aleatorios Generados por Codigo
+Datos Aleatorios Generados por Codigo
 
 ![alt text](<WhatsApp Image 2026-03-21 at 4.20.20 PM (1).jpeg>)
 
