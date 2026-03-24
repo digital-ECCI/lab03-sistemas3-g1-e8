@@ -9,7 +9,20 @@ HASBLEIDY JOHANNA SILVA ESCARRAGA 110002
 
 ## Documentación
 
+Datos del codigo Inicial
+
+![alt text](<WhatsApp Image 2026-03-21 at 4.20.20 PM.jpeg>)
+
+Datos del Aleatorios Generados por Codigo
+
+![alt text](<WhatsApp Image 2026-03-21 at 4.20.20 PM (1).jpeg>)
+
+Datos de codigo con lecturas Aleatorias y del Sistema
+
+![alt text](<WhatsApp Image 2026-03-21 at 4.20.20 PM (2).jpeg>)
+
 Monitor de Temperatura en Raspberry Pi
+
 
 Descripción del Proyecto:
 Este proyecto consiste en un script en Python para monitorear la temperatura de la CPU de una Raspberry Pi en tiempo real. El programa obtiene la temperatura del sistema mediante comandos del sistema operativo, almacena los datos temporalmente y los muestra en una gráfica dinámica usando Matplotlib.
