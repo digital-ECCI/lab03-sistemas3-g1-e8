@@ -60,13 +60,15 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Arquitectura
+
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  Raspberry Pi   │────→│   VNC Server    │────→│   VNC Viewer    │
 │   Zero W        │     │  (interfaz X11) │     │  (PC/Tablet)    │
 └─────────────────┘     └─────────────────┘     └─────────────────┘
-│
-├──→ vcgencmd (temp real)
-└──→ random.uniform() (simulación)
+          │
+          │
+          ├──→ vcgencmd (temperatura real)
+          └──→ random.uniform() (simulación)
 
 **Componentes software:**
 - `matplotlib` → Renderizado gráfico
@@ -87,17 +89,24 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 MonitorVariables
 ├── __init__(duracion_max=60, intervalo=0.5)
-│   └── Inicializa figura matplotlib y arrays de datos
+│   └── Inicializa la figura de matplotlib y las listas de datos
+│
 ├── datos_aleatorios()
-│   └── Retorna float entre 35-50°C (simulación sensor)
+│   └── Retorna un valor float entre 35 y 50 °C (simulación de sensor)
+│
 ├── leer_temperatura()
-│   └── Ejecuta vcgencmd, parsea y retorna temperatura CPU
+│   └── Ejecuta 'vcgencmd', procesa y retorna la temperatura de la CPU
+│
 ├── actualizar_datos()
-│   └── Añade muestras, mantiene ventana temporal deslizante
+│   └── Agrega nuevas muestras y mantiene una ventana de tiempo deslizante
+│
 ├── graficarDatos()
-│   └── Dibuja líneas roja (simulado) y verde (real)
+│   └── Dibuja dos líneas:
+│       • Roja → datos simulados
+│       • Verde → temperatura real
+│
 └── ejecutar()
-    └── Loop principal con manejo de KeyboardInterrupt
+    └── Bucle principal con manejo de KeyboardInterrupt
 
 
 ## API de Referencia
@@ -196,7 +205,7 @@ Sin el uso de time.sleep(), el programa ejecutaba el ciclo demasiado rápido, co
 Fue necesario implementar una forma de terminar el monitoreo sin forzar el cierre del programa. Esto se resolvió verificando si la ventana de la gráfica seguía abierta.
 
 
-###  Mejoras Futuras
+##  Mejoras Futuras
 
 Algunas mejoras que podrían implementarse en futuras versiones del proyecto incluyen:
 Guardar los datos de temperatura en un archivo CSV.
