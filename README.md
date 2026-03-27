@@ -60,7 +60,7 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Arquitectura
-"""
+```
 ┌─────────────────────────────────┐
 │  MonitorVariables               │
 │  (Presentación/Graficación)     │
@@ -95,7 +95,7 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 │  + vcgencmd measure_temp        │
 │  + random.uniform(35,50)          │
 └─────────────────────────────────┘
-"""
+```
 
 ## Requisitos de Hardware
 
