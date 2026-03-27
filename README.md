@@ -222,3 +222,7 @@ Tiempo,Temperatura
 2.0,45.5
 
 los cuales podriamos abrir en Excel, Matlab o Python
+
+
+explicacion 
+
