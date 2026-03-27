@@ -200,7 +200,7 @@ El programa incluye un bloque try-except en la función de lectura de temperatur
 * Esto evita que el programa se detenga inesperadamente.
 
 ## Tecnologías Utilizadas
-
+```
 Python 3
 Matplotlib → Visualización gráfica
 Subprocess → Ejecución de comandos del sistema
@@ -208,7 +208,7 @@ Time → Control del tiempo y frecuencia de medición
 Estructura del Código
 El programa está organizado en una clase llamada:
 MonitorTemperaturaRPI
-
+```
 ## Desafíos técnicos
 
 1. Lectura correcta de la temperatura
