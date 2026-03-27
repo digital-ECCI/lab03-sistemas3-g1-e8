@@ -109,27 +109,24 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 ## Estructura de Clases
 ```
-Monitor Variables
-
-- __init__(duracion_max=60, intervalo=0.5)
-  Inicializa la figura de matplotlib y las listas de datos
-
-- datos_aleatorios()
-  Retorna un valor float entre 35 y 50 °C (simulación de sensor)
-
-- leer_temperatura()
-  Ejecuta 'vcgencmd', procesa y retorna la temperatura de la CPU
-
-- actualizar_datos()
-  Agrega nuevas muestras y mantiene una ventana de tiempo deslizante
-
-- graficarDatos()
-  Dibuja dos líneas:
-    * Roja  → datos simulados
-    * Verde → temperatura real
-
-- ejecutar()
-  Bucle principal con manejo de KeyboardInterrupt
+MonitorVariables
+├── Atributos
+│   ├── duracion_max    int       60s ventana
+│   ├── intervalo       float     0.5s muestreo
+│   ├── tiempos         list      timestamps
+│   ├── temperaturas    list      CPU °C
+│   ├── datos           list      simulados
+│   ├── inicio          float     t inicial
+│   ├── fig             Figure    matplotlib
+│   └── ax              Axes      ejes plot
+│
+└── Métodos
+├── init()              → setup inicial
+├── datos_aleatorios()      → random 35-50
+├── leer_temperatura()      → vcgencmd
+├── actualizar_datos()      → buffer circular
+├── graficarDatos()         → render live
+└── ejecutar()              → main loop
 ```
 
 ## API de Referencia
