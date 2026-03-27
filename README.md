@@ -61,16 +61,12 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 ## Arquitectura
 """
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  Raspberry Pi   │────→│   VNC Server    │────→│   VNC Viewer    │
-│   Zero W        │     │  (interfaz X11) │     │  (PC/Tablet)    │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-          │
-          │
-          ├──→ vcgencmd (temperatura real)
-          └──→ random.uniform() (simulación)
+[ Raspberry Pi Zero W ] ---> [ VNC Server (X11) ] ---> [ VNC Viewer (PC/Tablet) ]
+              |
+              |
+              +--> vcgencmd (temperatura real)
+              +--> random.uniform() (simulación)
 """
-
 **Componentes software:**
 - `matplotlib` → Renderizado gráfico
 - `subprocess` → Lectura de temperatura del sistema
