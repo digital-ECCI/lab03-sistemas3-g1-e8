@@ -62,7 +62,8 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 ## Arquitectura
 
  [ Raspberry Pi Zero W ] ---> [ VNC Server ] ---> [ VNC Viewer ]
- |
+ 
+ 
  +--> vcgencmd (temperatura real)
  +--> random.uniform() (simulación)
 
