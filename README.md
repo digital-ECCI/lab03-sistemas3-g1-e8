@@ -93,7 +93,7 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 │                                 │
 │  - inicio: float                │
 │  + vcgencmd measure_temp        │
-│  + random.uniform(35,50)          │
+│  + random.uniform(35,50)        │
 └─────────────────────────────────┘
 ```
 
