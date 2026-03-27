@@ -108,26 +108,30 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Estructura de Clases
-```
-MonitorVariables
-├── Atributos
-│   ├── duracion_max    int       60s ventana
-│   ├── intervalo       float     0.5s muestreo
-│   ├── tiempos         list      timestamps
-│   ├── temperaturas    list      CPU °C
-│   ├── datos           list      simulados
-│   ├── inicio          float     t inicial
-│   ├── fig             Figure    matplotlib
-│   └── ax              Axes      ejes plot
-│
-└── Métodos
-├── init()              → setup inicial
-├── datos_aleatorios()      → random 35-50
-├── leer_temperatura()      → vcgencmd
-├── actualizar_datos()      → buffer circular
-├── graficarDatos()         → render live
-└── ejecutar()              → main loop
-```
+
+### Atributos
+
+| Nombre        | Tipo    | Descripción                  |
+|--------------|--------|------------------------------|
+| duracion_max | int    | Ventana de tiempo (60 s)     |
+| intervalo    | float  | Intervalo de muestreo (0.5 s)|
+| tiempos      | list   | Tiempos registrados          |
+| temperaturas | list   | Temperatura CPU (°C)         |
+| datos        | list   | Datos simulados              |
+| inicio       | float  | Tiempo inicial               |
+| fig          | Figure | Figura de matplotlib         |
+| ax           | Axes   | Ejes de la gráfica           |
+
+### Métodos
+
+| Método              | Descripción                              |
+|---------------------|------------------------------------------|
+| __init__()          | Inicializa variables y gráfica           |
+| datos_aleatorios()  | Genera valores entre 35 y 50             |
+| leer_temperatura()  | Lee temperatura con vcgencmd             |
+| actualizar_datos()  | Actualiza datos (ventana deslizante)     |
+| graficarDatos()     | Grafica datos en tiempo real             |
+| ejecutar()          | Ejecuta el bucle principal               |
 
 ## API de Referencia
 
