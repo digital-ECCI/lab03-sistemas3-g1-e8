@@ -38,44 +38,32 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 1. Lectura de temperatura de la CPU
 
 El programa obtiene la temperatura del procesador utilizando el comando del sistema:
-
 vcgencmd measure_temp
-
 Este comando es ejecutado desde Python mediante el módulo subprocess, lo que permite capturar la salida del sistema y procesarla para obtener el valor numérico de la temperatura.
-
 La temperatura se convierte a tipo float para poder ser utilizada en cálculos y visualizaciones.
 
 2. Monitoreo en tiempo real
 
 El script realiza lecturas periódicas de la temperatura utilizando un intervalo de tiempo definido por el usuario.
-
-intervalo = 0.5
-
 Esto significa que el sistema registra una nueva medición cada 0.5 segundos, permitiendo observar cambios de temperatura casi en tiempo real.
-
 Para evitar un uso excesivo del procesador, se utiliza:
 
-time.sleep(self.intervalo)
+
 3. Registro temporal de datos
 
 El programa almacena los datos en dos listas:
+* self.tiempos → almacena el tiempo transcurrido desde el inicio del monitoreo.
 
-self.tiempos → almacena el tiempo transcurrido desde el inicio del monitoreo.
-
-self.temperaturas → almacena las temperaturas registradas.
+* self.temperaturas → almacena las temperaturas registradas.
 
 El tiempo se calcula con:
-
 time.time() - self.inicio
-
 Esto permite mostrar el tiempo relativo desde que comenzó la medición, facilitando la interpretación de la gráfica.
 
 4. Visualización gráfica dinámica
 
 La visualización de los datos se realiza utilizando la librería Matplotlib en modo interactivo.
-
 plt.ion()
-
 La gráfica se actualiza continuamente mostrando:
 
 Eje X → tiempo transcurrido
@@ -85,43 +73,30 @@ Eje Y → temperatura de la CPU en °C
 Antes de actualizar la gráfica se utiliza:
 
 self.ax.clear()
-
 Esto evita que las líneas anteriores se acumulen y garantiza que solo se muestre la información actualizada.
 
 5. Ventana de monitoreo interactiva
 
 El ciclo principal del programa se mantiene activo mientras la ventana de la gráfica esté abierta:
-
 plt.fignum_exists(self.fig.number)
-
 Esto permite que el programa finalice automáticamente cuando el usuario cierra la ventana de la gráfica.
 
 6. Manejo de errores
 
 El programa incluye un bloque try-except en la función de lectura de temperatura para manejar posibles errores, por ejemplo:
+* Fallo en el comando del sistema
+* Problemas de permisos
+* Error en la lectura del sensor
+* Esto evita que el programa se detenga inesperadamente.
 
-Fallo en el comando del sistema
-
-Problemas de permisos
-
-Error en la lectura del sensor
-
-Esto evita que el programa se detenga inesperadamente.
-
-Tecnologías Utilizadas
+### Tecnologías Utilizadas:
 
 Python 3
-
 Matplotlib → Visualización gráfica
-
 Subprocess → Ejecución de comandos del sistema
-
 Time → Control del tiempo y frecuencia de medición
-
 Estructura del Código
-
 El programa está organizado en una clase llamada:
-
 MonitorTemperaturaRPI
 
 ### Las principales funciones son:
