@@ -108,8 +108,8 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Estructura de Clases
-
-MonitorVariables
+```
+Monitor Variables
 
 - __init__(duracion_max=60, intervalo=0.5)
   Inicializa la figura de matplotlib y las listas de datos
@@ -130,7 +130,7 @@ MonitorVariables
 
 - ejecutar()
   Bucle principal con manejo de KeyboardInterrupt
-
+```
 
 ## API de Referencia
 
