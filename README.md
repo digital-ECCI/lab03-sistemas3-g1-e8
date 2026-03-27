@@ -60,20 +60,40 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Arquitectura
-
- [ Raspberry Pi Zero W ] ---> [ VNC Server ] ---> [ VNC Viewer ]
- 
-
- +--> vcgencmd (temperatura real)
-
-
- +--> random.uniform() (simulación)
-
-
-**Componentes software:**
-- `matplotlib` → Renderizado gráfico
-- `subprocess` → Lectura de temperatura del sistema
-- `time` → Control de intervalos de muestreo
+┌─────────────────────────────────┐
+│  MonitorVariables               │
+│  (Presentación/Graficación)     │
+│                                 │
+│  - fig                          │
+│  - ax                           │
+│  + graficarDatos()              │
+│  + ejecutar()                   │
+└──────────────┬──────────────────┘
+               │
+               ▼
+┌─────────────────────────────────┐
+│  Procesamiento de Datos         │
+│  (Lógica/Control)               │
+│                                 │
+│  - duracion_max                 │
+│  - intervalo                    │
+│  - tiempos[]                    │
+│  - temperaturas[]               │
+│  - datos[]                      │
+│  + actualizar_datos()           │
+│  + datos_aleatorios()           │
+│  + leer_temperatura()           │
+└──────────────┬──────────────────┘
+               │
+               ▼
+┌─────────────────────────────────┐
+│  Fuentes de Datos               │
+│  (Entidades/Hardware)           │
+│                                 │
+│  - inicio: float                │
+│  + vcgencmd measure_temp        │
+│  + random.uniform(35,50)          │
+└─────────────────────────────────┘
 
 ## Requisitos de Hardware
 
