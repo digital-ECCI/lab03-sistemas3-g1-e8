@@ -66,7 +66,7 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
  +--> vcgencmd (temperatura real)
 
- 
+
  +--> random.uniform() (simulación)
 
 
@@ -262,6 +262,7 @@ self.writer.writerow([ahora, temp]) y cerrando e archivo con
 self.archivo.close()  y al final obteniendo datos como 
 
 Tiempo,Temperatura
+
 0.5,45.2
 1.0,45.3
 1.5,45.4
