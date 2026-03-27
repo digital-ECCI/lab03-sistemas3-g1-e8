@@ -29,12 +29,12 @@ Datos de codigo con lecturas Aleatorias y del Sistema
 Monitor de Temperatura en Raspberry Pi
 
 
-Descripción del Proyecto:
+## Descripción del Proyecto:
 Este proyecto consiste en un script en Python para monitorear la temperatura de la CPU de una Raspberry Pi en tiempo real. El programa obtiene la temperatura del sistema mediante comandos del sistema operativo, almacena los datos temporalmente y los muestra en una gráfica dinámica usando Matplotlib.
 
 El objetivo principal es visualizar el comportamiento térmico del procesador mientras la Raspberry Pi está en funcionamiento, lo cual permite analizar el rendimiento del sistema y detectar posibles problemas de sobrecalentamiento.
 
-Funcionalidades Implementadas
+### Funcionalidades Implementadas
 1. Lectura de temperatura de la CPU
 
 El programa obtiene la temperatura del procesador utilizando el comando del sistema:
@@ -124,7 +124,7 @@ El programa está organizado en una clase llamada:
 
 MonitorTemperaturaRPI
 
-Las principales funciones son:
+### Las principales funciones son:
 
 Método	Función
 __init__()	Inicializa variables, listas y configuración de la gráfica
@@ -153,7 +153,7 @@ Sin el uso de time.sleep(), el programa ejecutaba el ciclo demasiado rápido, co
 Fue necesario implementar una forma de terminar el monitoreo sin forzar el cierre del programa. Esto se resolvió verificando si la ventana de la gráfica seguía abierta.
 
 
-Posibles Mejoras Futuras:
+### Posibles Mejoras Futuras:
 
 Algunas mejoras que podrían implementarse en futuras versiones del proyecto incluyen:
 Guardar los datos de temperatura en un archivo CSV.
@@ -224,5 +224,5 @@ Tiempo,Temperatura
 los cuales podriamos abrir en Excel, Matlab o Python
 
 
-explicacion 
+
 
