@@ -60,12 +60,11 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 
 ## Arquitectura
-"""
+
  [ Raspberry Pi Zero W ] ---> [ VNC Server ] ---> [ VNC Viewer ]
  |
  +--> vcgencmd (temperatura real)
  +--> random.uniform() (simulación)
-"""
 
 
 **Componentes software:**
@@ -85,7 +84,6 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 
 ## Estructura de Clases
 
-"""
 MonitorVariables
 
 - __init__(duracion_max=60, intervalo=0.5)
@@ -107,7 +105,7 @@ MonitorVariables
 
 - ejecutar()
   Bucle principal con manejo de KeyboardInterrupt
-"""
+
 
 ## API de Referencia
 
