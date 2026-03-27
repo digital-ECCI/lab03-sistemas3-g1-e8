@@ -69,8 +69,8 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
           │
           ├──→ vcgencmd (temperatura real)
           └──→ random.uniform() (simulación)
-
 """
+
 **Componentes software:**
 - `matplotlib` → Renderizado gráfico
 - `subprocess` → Lectura de temperatura del sistema
@@ -89,6 +89,7 @@ El objetivo principal es visualizar el comportamiento térmico del procesador mi
 ## Estructura de Clases
 
 """
+
 MonitorVariables
 ├── __init__(duracion_max=60, intervalo=0.5)
 │   └── Inicializa la figura de matplotlib y las listas de datos
